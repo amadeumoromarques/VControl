@@ -33,6 +33,7 @@ Clique na imagem abaixo para visualizar as funções basicas do software em func
 ## Download do executável para abrir a aplicação
 Se você deseja executar a aplicação antes de efetuar o build no seu computador, é possível efetuar o download do executável para iniciar a API e o FRONT: https://github.com/amadeumoromarques/VolvoCrud/blob/master/WebApi_All_PublishedVersion.zip
 
+- Video de como baixar e abrir o executável do Windows - [Clique aqui para assitir o video](https://youtu.be/Cb_qo4ZzIpc)
 
 ## Tecnologias Utilizadas
 
