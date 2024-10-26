@@ -31,7 +31,7 @@ Clique na imagem abaixo para visualizar as funções basicas do software em func
 [![Assista ao vídeo no YouTube](https://github.com/amadeumoromarques/VolvoCrud/blob/master/System%20Pictures/0_HomePage.png)](https://youtu.be/B5Gc1P2i3Ug)
 
 ## Download do executável para abrir a aplicação
-Download do executável para iniciar a API e o FRONT: https://github.com/amadeumoromarques/VolvoCrud/blob/master/WebApi_All_PublishedVersion.zip
+Se você deseja executar a aplicação antes de efetuar o build no seu computador, é possível efetuar o download do executável para iniciar a API e o FRONT: https://github.com/amadeumoromarques/VolvoCrud/blob/master/WebApi_All_PublishedVersion.zip
 
 
 ## Tecnologias Utilizadas
