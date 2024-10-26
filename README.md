@@ -42,7 +42,8 @@ Este sistema foi construído utilizando tecnologias robustas para proporcionar d
 - **Angular**: Frontend para criação de uma interface de usuário dinâmica e responsiva.
 - **Entity Framework Core**: Mapeamento objeto-relacional (ORM) para facilitar a interação com o banco de dados.
 - **OData API**: Permite a consulta de dados eficiente e flexível para o frontend.
-- **Banco de Dados Relacional**: Estrutura para armazenamento seguro e organizado dos dados.
+- **Banco de Dados SQLite local**: Estrutura para armazenamento seguro e organizado dos dados.
+- **Migrations**: Criação automática do banco de dados local, utilizando migrations.
 
 
 ## Pré-Requisitos para Baixar o Projeto e efetuar o Build da aplicação
