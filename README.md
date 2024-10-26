@@ -102,8 +102,9 @@ Para configurar e rodar o projeto no seu computador, verifique se você possui a
 
 Se deseja verificar como deve ser instalado corretamente o sistema e efetuar o build da aplicação, pode seguir os passos abaixo:
 - Video mostrando como baixar o projeto e compilar ele na máquina - [Video explicando como efetuar o debug da aplicação](https://youtu.be/Ld9ims6J4VY).
-- 
+- Documento técnico com instruções detalhadas do passo a passo de como efetuar o build da aplicação - [Link do Download do arquivo](https://github.com/amadeumoromarques/VolvoCrud/blob/master/Documents/Efetuar%20o%20Build%20da%20aplica%C3%A7%C3%A3o%20local.pdf)
 
 ## Como executar os testes unitários?
 
 - Vídeo explicando como rodar os testes unitários dentro do Visual Studio 2022 - [Vídeo tutorial de execução dos testes na API](https://youtu.be/82Wcdxyc0us)
+- Documento técnico instruindo como realizar os testes unitários - [Link do Download do arquivo](https://github.com/amadeumoromarques/VolvoCrud/blob/master/Documents/Efetuar%20o%20Build%20da%20aplica%C3%A7%C3%A3o%20local.pdf)
