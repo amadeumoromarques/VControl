@@ -38,7 +38,7 @@ Se você deseja executar a aplicação antes de efetuar o build no seu computado
 - Download do executável - Arquivo do Git: WebApi_All_PublishedVersion.zip - [Clique aqui para fazer download](https://github.com/amadeumoromarques/VolvoCrud/blob/master/WebApi_All_PublishedVersion.zip)
 - Video de como baixar e abrir o executável do Windows - [Clique aqui para assitir o video](https://youtu.be/Cb_qo4ZzIpc)
 
-**OBS: É necessário tirar os arquivos do .zip para que funcione corretamente**
+**OBS: É necessário extrair todos os arquivos do .zip para que funcione corretamente**
 
 ## Tecnologias Utilizadas
 
