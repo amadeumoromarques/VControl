@@ -26,7 +26,9 @@ Este sistema permite ao usuário cadastrar e gerenciar:
   - **Cor em Hexadecimal**: Código hexadecimal da cor, facilitando a padronização visual.
 
 ## Video de funcionamento do sistema
-Clique na imagem abaixo para visualizar as funções basicas do software em funcionamento: [Clique aqui para assitir o video de introdução ao sistema](https://youtu.be/B5Gc1P2i3Ug)
+Clique na imagem abaixo para visualizar as funções basicas do software em funcionamento: 
+
+[Clique aqui para assitir o video de introdução ao sistema](https://youtu.be/B5Gc1P2i3Ug)
 
 [![Assista ao vídeo no YouTube](https://github.com/amadeumoromarques/VolvoCrud/blob/master/System%20Pictures/0_HomePage.png)](https://youtu.be/B5Gc1P2i3Ug)
 
@@ -100,3 +102,8 @@ Para configurar e rodar o projeto no seu computador, verifique se você possui a
 
 Se deseja verificar como deve ser instalado corretamente o sistema e efetuar o build da aplicação, pode seguir os passos abaixo:
 - Video mostrando como baixar o projeto e compilar ele na máquina - [Video explicando como efetuar o debug da aplicação](https://youtu.be/Ld9ims6J4VY).
+- 
+
+## Como executar os testes unitários?
+
+- Vídeo explicando como rodar os testes unitários dentro do Visual Studio 2022 - [Vídeo tutorial de execução dos testes na API](https://youtu.be/82Wcdxyc0us)
