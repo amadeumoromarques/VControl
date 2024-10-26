@@ -2,14 +2,15 @@
 
 Clique na imagem abaixo para visualizar as funções basicas do software em funcionamento: [Clique aqui para assitir o video de introdução ao sistema](https://youtu.be/B5Gc1P2i3Ug)
 
-[![Assista ao vídeo no YouTube](https://img.youtube.com/vi/B5Gc1P2i3Ug/0.jpg)](https://youtu.be/B5Gc1P2i3Ug)
-
+[![Assista ao vídeo no YouTube](https://github.com/amadeumoromarques/VolvoCrud/blob/master/System%20Pictures/0_HomePage.png)](https://youtu.be/B5Gc1P2i3Ug)
 
 Sistema de Controle de caminhões, com telas de cadastro onde o usuário pode cadastar:
   * Caminhões (Código do Chassi, Ano de Fabricação, Cor, Modelo e Planta)
   * Tabela de modelos (Tipo)
   * Tabela de plantas (Código da Planta, Nome da Planta)
   * Tabela de cores (Nome da Cor, Código no sistema, Cor em Hexadecimal)
+
+Download do executável para iniciar a API e o FRONT: https://github.com/amadeumoromarques/VolvoCrud/blob/master/WebApi_All_PublishedVersion.zip
 
 Tecnologias e frameworks utilizados no projeto:
   * Angular TypeScript
