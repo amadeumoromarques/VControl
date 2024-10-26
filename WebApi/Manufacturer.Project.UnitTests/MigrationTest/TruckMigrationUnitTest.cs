@@ -78,7 +78,7 @@ namespace Manufacturer.Project.UnitTests.MigrationTest
             }
 
             _truckRepositoryMock.Verify(repo => repo.Insert(truck), Times.Once, "Método de Inserir no banco de dados falhou!");
-            _truckRepositoryMock.Verify(repo => repo.SaveChanges(), Times.Once, "Método de SaveChanges falhou no banco de dados!");
+            _truckRepositoryMock.Verify(repo => repo.SaveChangesAsync(), Times.Once, "Método de SaveChanges falhou no banco de dados!");
         }
     }
 }
