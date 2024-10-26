@@ -2,13 +2,11 @@ namespace Manufacturer.BaseWebApi.API
 {
     using System;
     using System.Diagnostics;
-    using System.Linq;
+    using Manufacturer.Project.Core.DataContext;
+    using Microsoft.AspNetCore;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.Hosting.Server;
-    using Microsoft.AspNetCore.Hosting.Server.Features;
+    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Hosting;
     using Microsoft.Extensions.Logging;
     using NLog.Web;
 
@@ -29,7 +27,12 @@ namespace Manufacturer.BaseWebApi.API
         /// </summary>
         public static void Main(string[] args)
         {
-            var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
+            /*
+             * Log error levels
+             * https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-5.0#log-level
+             */
+
+            var logger = NLog.Web.NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
             try
             {
@@ -41,51 +44,25 @@ namespace Manufacturer.BaseWebApi.API
                     return;
                 }
 
-                logger.Debug("Iniciando aplicação");
+                logger.Debug("init main");
 
-                var host = CreateHostBuilder(args).Build();
-
-                // Executa o host e, em seguida, abre o navegador com o endereço capturado
-                host.RunAsync();
-
-                try
-                {
-                    var serverAddressesFeature = host.Services.GetRequiredService<IServer>()?
-                    .Features.Get<IServerAddressesFeature>();
-
-                    if (serverAddressesFeature != null)
-                    {
-                        var baseUrl = serverAddressesFeature.Addresses.FirstOrDefault();
-                        if (!string.IsNullOrEmpty(baseUrl))
-                        {
-                            var fullUrl = $"{baseUrl}/truck/list";
 #if !DEBUG
-                        try
-                        {
-                            OpenBrowser(fullUrl);
-                        }
-                        catch (Exception)
-                        {
-                            logger.Info($"Abra o navegador web e digite a URL: {fullUrl}");
-                        }
+    OpenBrowser("http://localhost:5001/truck/list");
 #endif
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                    logger.Warn($"Verfique no prompt CMD o link para digitar no navegador, ele esta ao lado da frase: 'Now linstening on:........'");
-                }
 
-                host.WaitForShutdown();
+                CreateHostBuilder(args)
+                    .Build()
+                    .Run();  // Inicia a aplicação como servidor Web
             }
             catch (Exception exception)
             {
-                logger.Error(exception, "A aplicação foi encerrada devido a uma exceção");
+                ////NLog: catch setup errors
+                logger.Error(exception, "Stopped program because of exception");
                 throw;
             }
             finally
             {
+                // Ensure to flush and stop internal timers/threads before application-exit (Avoid segmentation fault on Linux)
                 NLog.LogManager.Shutdown();
             }
         }
