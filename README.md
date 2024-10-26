@@ -1,6 +1,6 @@
-# Volvo CRUD - Truck Control System
+# Volvo - Truck Control System
 
-O **Volvo CRUD - Truck Control System** é um sistema desenvolvido para gerenciar o cadastro de caminhões e suas propriedades, proporcionando uma interface intuitiva para que o usuário possa organizar e controlar diferentes aspectos dos caminhões no sistema.
+O **Volvo - Truck Control System** é um sistema desenvolvido para gerenciar o cadastro de caminhões e suas propriedades, proporcionando uma interface intuitiva para que o usuário possa organizar e controlar diferentes aspectos dos caminhões no sistema.
 
 ## Funcionalidades Principais
 
