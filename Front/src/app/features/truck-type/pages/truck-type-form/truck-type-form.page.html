@@ -1,0 +1,44 @@
+<form class="d-flex flex-column flex-grow-1" [formGroup]="formGroup">
+    <div class="d-flex flex-column flex-grow-1 p-4">
+        <div class="row">
+            <div class="col">
+                <h4>Cadastro de Tipo</h4>
+                <p class="text-muted">Crie ou edite informações do item abaixo:</p>
+            </div>
+        </div>
+
+        <content-alert class="mt-4" type="ERROR"
+            *ngIf="getByIdCommand.wasExecuted && !getByIdCommand.response.isSuccess">
+            Houve um erro ao tentar obter os dados do servidor, verifique sua conexão e tente novamente.
+        </content-alert>
+
+        <content-loading class="mt-4" *ngIf="!getByIdCommand.wasExecuted && entityId != ''"></content-loading>
+
+        <div class="mt-4 d-flex flex-column"
+            *ngIf="(getByIdCommand.wasExecuted && getByIdCommand.response.isSuccess) || entityId == ''">
+            <mat-form-field class="flex-grow-1">
+                <mat-label>Nome do Tipo</mat-label>
+                <input #inputType matInput formControlName="Type">
+                <mat-hint align="end">{{inputType.value.length}}/50</mat-hint>
+                <mat-error>
+                    <volvo-input-messages control="Type" [messages]="formValidationMessages"></volvo-input-messages>
+                </mat-error>
+            </mat-form-field>
+            
+            <content-alert class="mt-4" type="INFO">
+                Atenção: ao salvar este tipo de item, não será mais possível editar suas informações, para preservar a rastreabilidade dos registros anteriores. Caso seja necessária alguma edição, será preciso desabilitar o item e criar um novo.
+            </content-alert>
+        </div>
+    </div>
+
+    <content-alert class="mt-4" type="ERROR" *ngIf="errorMessage">
+        Erro ao salvar o item: {{errorMessage}};
+    </content-alert>
+
+    <div class="d-flex align-items-center justify-content-end p-4">
+        <button type="submit" mat-flat-button color="primary" (click)="save()"
+            [enableLoading]="submitCommand.isExecuting" [disabled]="!formGroup.valid || getByIdCommand.isExecuting">
+            Salvar
+        </button>
+    </div>
+</form>

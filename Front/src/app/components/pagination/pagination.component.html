@@ -1,0 +1,17 @@
+<div class="d-flex align-items-center justify-content-center" *ngIf="this.state.totalItems">
+    <button mat-icon-button color="primary" class="me-4" (click)="goToPage(this.state.currentPage - 1)" [disabled]="queryCommand.isExecuting || this.state.currentPage == 1">
+        <mat-icon class="m-0 p-0">arrow_left_alt</mat-icon>
+    </button>
+    <button 
+        mat-button 
+        *ngFor="let item of this.state.paginationItemsArray;" 
+        [ngClass]="{ 'bg-primary' : this.state.currentPage == item }"
+        (click)="goToPage(item)"
+        [disabled]="queryCommand.isExecuting"
+        [enableLoading]="queryCommand.isExecuting && this.state.currentPage == item">
+        {{item}}
+    </button>
+    <button mat-icon-button color="primary" class="ms-4" (click)="goToPage(this.state.currentPage + 1)" [disabled]="queryCommand.isExecuting || this.state.currentPage == this.state.totalPages">
+        <mat-icon class="m-0 p-0">arrow_right_alt</mat-icon>
+    </button>
+</div>

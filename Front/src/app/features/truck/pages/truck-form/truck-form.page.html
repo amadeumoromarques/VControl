@@ -1,0 +1,94 @@
+<form class="d-flex flex-column flex-grow-1" [formGroup]="formGroup">
+    <div class="d-flex flex-column flex-grow-1 p-4">
+        <div class="row">
+            <div class="col">
+                <h4>Cadastro Caminhão</h4>
+                <p class="text-muted">Crie ou edite informações do item abaixo:</p>
+            </div>
+        </div>
+
+        <content-alert class="mt-4" type="ERROR"
+            *ngIf="getByIdCommand.wasExecuted && !getByIdCommand.response.isSuccess">
+            Houve um erro ao tentar obter os dados do servidor, verifique sua conexão e tente novamente.
+        </content-alert>
+
+        <content-loading class="mt-4" *ngIf="!getByIdCommand.wasExecuted && entityId != ''"></content-loading>
+
+        <div class="mt-4 d-flex flex-column"
+            *ngIf="(getByIdCommand.wasExecuted && getByIdCommand.response.isSuccess) || entityId == ''">
+            <mat-form-field class="flex-grow-1">
+                <mat-label>Código do Chassi</mat-label>
+                <input #inputChassisCode matInput formControlName="ChassisCode">
+                <mat-hint align="end">{{inputChassisCode.value.length}}/80</mat-hint>
+                <mat-error>
+                    <volvo-input-messages control="ChassisCode" [messages]="formValidationMessages"></volvo-input-messages>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="flex-grow-1">
+                <mat-label>Ano de Fabricação</mat-label>
+                <input #inputManufacturerYear type="number" matInput formControlName="ManufacturerYear">
+                <mat-error>
+                    <volvo-input-messages control="ManufacturerYear" [messages]="formValidationMessages"></volvo-input-messages>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field *ngIf="(colorQueryCommand.response$ | async)?.result?.value as options">
+                <mat-label>Cor</mat-label>
+                <mat-select #inputIdColor formControlName="IdColor">
+                    <mat-select-trigger>
+                        <span style="display: flex; align-items: center;">
+                            <div class="color-circle" [ngStyle]="{'background-color': getColorSelected(options)?.HexaColor}"></div>
+                            <span style="margin-left: 8px;">{{ getColorSelected(options)?.Name }}</span>
+                        </span>
+                    </mat-select-trigger>
+                    <mat-option *ngFor="let option of options" [value]="option.Id" [disabled]="option.Deleted">
+                        <div class="color-circle" [ngStyle]="{'background-color': option.HexaColor}"></div>
+                        {{ option.Name }}{{ option.Deleted ? ' - Atenção! Item Desabilitado' : '' }}
+                    </mat-option>
+                </mat-select>
+                <mat-error>
+                    <volvo-input-messages control="IdColor" [messages]="formValidationMessages"></volvo-input-messages>
+                </mat-error>
+            </mat-form-field>
+           
+            <mat-form-field *ngIf="(truckTypeQueryCommand.response$ | async)?.result?.value as options">
+                <mat-label>Modelo</mat-label>
+                <mat-select #inputIdTruckType formControlName="IdTruckType">
+                    <mat-option *ngFor="let option of options" [value]="option.Id" [disabled]="option.Deleted">
+                        {{ option.Type }}{{ option.Deleted ? ' - Atenção! Item Desabilitado' : '' }}
+                    </mat-option>
+                </mat-select>
+                <mat-error>
+                    <volvo-input-messages control="IdTruckType" [messages]="formValidationMessages"></volvo-input-messages>
+                </mat-error>
+            </mat-form-field>            
+
+            <mat-form-field *ngIf="(plantOptionsQueryCommand.response$ | async)?.result?.value as options">
+                <mat-label>Planta</mat-label>
+                <mat-select #inputIdPlantOptions formControlName="IdPlantOptions">
+                    <mat-option *ngFor="let option of options" [value]="option.Id" [disabled]="option.Deleted">
+                        {{ option.Key }} - {{ option.DisplayName }}{{ option.Deleted ? ' - Atenção! Item Desabilitado' : '' }}
+                    </mat-option>
+                </mat-select>
+                <mat-error>
+                    <volvo-input-messages control="IdPlantOptions" [messages]="formValidationMessages"></volvo-input-messages>
+                </mat-error>
+            </mat-form-field>
+            <content-alert class="mt-4" type="TIPS">
+                Caso deseje cadastar novas opções de cores, modelos de caminhões ou novas plantas, acesse o menu "Cadastros Padrões do App".
+            </content-alert>        
+        </div>
+    </div>
+
+    <content-alert class="mt-4" type="ERROR" *ngIf="errorMessage">
+        Erro ao salvar o item: {{errorMessage}};
+    </content-alert>
+
+    <div class="d-flex align-items-center justify-content-end p-4">
+        <button type="submit" mat-flat-button color="primary" (click)="save()"
+            [enableLoading]="submitCommand.isExecuting" [disabled]="!formGroup.valid || getByIdCommand.isExecuting">
+            Salvar
+        </button>
+    </div>
+</form>

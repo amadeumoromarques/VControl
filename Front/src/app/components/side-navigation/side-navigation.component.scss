@@ -1,0 +1,81 @@
+:host {
+    z-index: 100;
+    overflow: hidden;
+    position: fixed;
+}
+
+::ng-deep {
+    .sidenav-container-content-height > *:first-child {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
+.sidenav-container-overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+}
+
+.sidenav-container-content{
+    position: absolute;
+    right: -100%;
+    height: 100%;
+    background-color: white;
+    overflow-y: auto;
+    margin-right: -100%;
+    transition: all 1s;
+    -webkit-animation: slide 0.5s forwards;
+    animation: slide 0.5s forwards;
+    border: 1px solid #3A3A3A !important;
+    display: flex;
+    flex-direction: column;
+}
+
+@-webkit-keyframes slide {
+    100% { right: 0; }
+}
+
+@keyframes slide {
+    100% { right: 0; }
+}
+
+.sidenav-container-content-opened {
+    margin-right: unset !important;
+}
+
+.sidenav-container-content {
+    max-height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .sidenav-container-content {
+        width: 100%;
+        
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .sidenav-container-content {
+        min-width: 600px;
+        max-width: 850px;
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { }

@@ -1,0 +1,69 @@
+<div class="container-lg p-4 d-flex flex-column" [formGroup]="formGroup">
+    <div class="row">
+        <div class="col">
+            <h4>Plantas cadastradas</h4>
+            <p class="text-muted">Lista de plantas cadastradas no sistema.</p>
+        </div>
+        <div class="col mt-4 mt-md-0 d-flex align-items-center justify-content-end">
+            <mat-form-field class="mat-form-field-tiny me-2 flex-grow-1">
+                <mat-label>Buscar</mat-label>
+                <input matInput formControlName="Search">
+                <mat-icon matSuffix >search</mat-icon>
+              </mat-form-field>
+            <button mat-flat-button color="primary" (click)="onAdd()">
+                <mat-icon>add</mat-icon>
+                Inserir
+            </button>
+        </div>
+    </div>
+   
+    <content-alert class="mt-4" type="ERROR" *ngIf="getAllQueryCommand.wasExecuted && !getAllQueryCommand.response.isSuccess">
+        <p><b>Erro:</b> Houve um erro ao tentar obter os dados do servidor, verifique sua conexão e tente novamente.</p>
+    </content-alert>
+
+    <content-loading class="mt-4" *ngIf="!getAllQueryCommand.wasExecuted"></content-loading>
+
+    <ng-container *ngIf="(getAllQueryCommand.response$ | async)?.result; let result">
+
+        <content-alert class="mt-4 mb-0" type="NONE" *ngIf="!result.value?.length">
+            <p>Nenhuma entidade encontrada.</p>
+        </content-alert>
+
+        <div class="card mt-4" *ngIf="result.value.length">
+            <table class="table table-striped table-clickable" >
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Código da Planta</th>
+                        <th>Nome da Planta</th>
+                        <th>Status Cadastro</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of result.value" >
+                        <td><div class="d-flex align-items-center"><p>{{item.Id}}</p></div></td>
+                        <td><div class="d-flex align-items-center"><p>{{item.Key}}</p></div></td>
+                        <td><div class="d-flex align-items-center"><p>{{item.DisplayName}}</p></div></td>
+                        <td><div class="d-flex align-items-center"><p>{{ item.Deleted ? 'Desabilitado' : 'Ativo' }}</p></div></td>
+                        <td>
+                            <button 
+                                mat-icon-button 
+                                [color]="item.Deleted ? 'warn' : 'primary'" 
+                                style="pointer-events: auto;" 
+                                (click)="onDelete(item.Id)" 
+                                [matTooltip]="item.Deleted ? 'Habilitar o item no cadastro' : 'Desabilitar item no cadastro!'">
+                                <mat-icon>{{ item.Deleted ? 'visibility_off' : 'visibility' }}</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+        <div class="d-flex align-items-center justify-content-center mt-4">
+            <pagination [queryCommand]="getAllQueryCommand"></pagination>
+        </div>
+    </ng-container>
+    
+</div>

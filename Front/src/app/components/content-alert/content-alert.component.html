@@ -1,0 +1,39 @@
+<div class="alert alert-danger d-flex" *ngIf="type == 'ERROR'">
+    <div class="d-flex me-2">
+        <mat-icon >error</mat-icon>
+    </div>
+    <div class="d-flex flex-column">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+    </div>
+</div>
+
+<div class="alert alert-primary d-flex" *ngIf="type == 'INFO'">
+    <div class="d-flex me-2">
+        <mat-icon >warning</mat-icon>
+    </div>
+    <div class="d-flex flex-column">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+    </div>
+</div>
+
+<div class="alert alert-primary d-flex" *ngIf="type == 'TIPS'">
+    <div class="d-flex me-2">
+        <mat-icon >lightbulb_2</mat-icon>
+    </div>
+    <div class="d-flex flex-column">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+    </div>
+</div>
+
+<div class="alert d-flex" *ngIf="type == 'NONE'">
+    <div class="d-flex me-2">
+        <mat-icon >warning</mat-icon>
+    </div>
+    <div class="d-flex flex-column">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+    </div>
+</div>
+
+<ng-template #content>
+    <ng-content></ng-content>
+</ng-template>

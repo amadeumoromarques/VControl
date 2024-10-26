@@ -1,0 +1,113 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+body { font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+p,a,h1,h2,h3,h4,h5,h6 {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--color-font);
+}
+
+
+@keyframes b-spinner-border {
+    to {
+        transform: rotate(360deg) #{"/* rtl:ignore */"};
+    }
+}
+
+.cdk-overlay-container {
+    z-index: 99999 !important; /* ou um valor mais alto, se necessário */
+  }
+
+.loading-button {
+
+    /*Addon - Fixes btn-lg*/
+    &.btn-lg::before,
+    &.btn-lg::after {
+        margin-bottom: 0.25rem;
+    }
+
+    /*Addon - changes*/
+    &::before,
+    &::after {
+        border: 0.2em solid currentColor;
+        font-size: 1rem;
+        margin-bottom: 0.05rem;
+    }
+
+    /*spinner-border-sm*/
+    &::before,
+    &::after {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    /*.spinner-border*/
+    &::before,
+    &::after {
+        display: inline-block;
+        vertical-align: text-bottom;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: 0.75s linear infinite b-spinner-border;
+        animation: 0.75s linear infinite b-spinner-border;
+    }
+}
+
+.loading-button:not(.loading-button-end)::before {
+    content: "";
+    margin-right: 0.25rem;
+}
+
+.loading-button.loading-button-end::after {
+    content: "";
+    margin-left: 0.25rem;
+}
+
+
+.table {
+    margin: 0;
+    border-radius: 16px;
+    tr {
+        transition: all 0.2s;
+    }
+
+    tr td {
+        background-color: unset;
+        vertical-align: middle;  
+    }
+
+    tr th:last-child  {
+        text-align: end;
+    }
+    
+    tr td:last-child {
+        text-align: end;
+    }
+
+    thead tr {
+        vertical-align: middle;
+        th:first-child {
+            border-top-left-radius: 8px;
+        }
+        th:last-child {
+            border-top-right-radius: 8px;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<div class="sidenav-container-overlay" (click)="close()"></div>
+<div class="sidenav-container-content" [ngClass]="{'sidenav-container-content-opened': sideNavigationState?.Opened}">
+    <div class="d-flex ps-4 pe-4 pt-2" (click)="close()" [matTooltip]="'Voltar para a tela anterior'">
+        <h4 style="margin: 0; padding:0;">&lt;&lt;</h4>
+        
+    </div>
+    <div class="sidenav-container-content-height d-flex flex-column align-items-stretch h-100">
+        <ng-template #dynamicComponentContainer></ng-template>
+    </div>
+</div>

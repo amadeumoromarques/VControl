@@ -1,0 +1,112 @@
+:host {
+    --menu-overlay-color: #00000080;
+    --menu-color: #fafafa;
+}
+
+@media (min-width: 1200px) {
+    .menu-bar.menu-hidden {
+        margin-left: -22vw;
+    }
+}
+
+@media (max-width: 1199px) {
+    .menu-bar.menu-hidden {
+        margin-left: -80vw;
+    }
+
+    .menu-bar{
+        position: absolute;
+        height: 100vh !important;
+        width: 80vw !important;
+        z-index: 101;
+    }
+
+    .menu-bar-overlay {
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--menu-overlay-color);
+        position: absolute;
+        z-index: 100;
+        display: block !important;
+    }
+}
+
+.menu-bar-overlay {
+    display: none;
+}
+
+
+.menu-bar{
+    width: 22vw;
+    padding: 2rem;
+    background-color: var(--menu-color);
+}
+
+::ng-deep {
+    .shell-container{
+        width: 100%;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;  
+        // width: calc(100vw - 17vw);
+    }
+
+    .shell-container > router-outlet + * {
+        flex: 1; /* Aplica o flex: 1 apenas ao próximo irmão após o router-outlet */
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.b-animate {
+    transition-duration: .35s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-property: box-shadow,left,right,transform,width,margin-left,padding;
+}
+
+.shell-container-header {
+    min-height: 72px;
+    background-color: var(--menu-color);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    &.hidden {
+        transform: translateY(-100%); // Esconde o header movendo-o para cima
+        opacity: 0; // Aplica transparência para um efeito mais suave
+    }
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { }
+
+.menu-item {
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #e0e9f5;
+    color: #2A609D;
+}

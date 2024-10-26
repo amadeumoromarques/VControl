@@ -1,0 +1,29 @@
+:host {
+    --color-alert-default-background: #f5f5f5;
+    --color-alert-primary-background: #ebf2fa;
+    --color-alert-danger-background: #faebeb;
+}
+
+.alert {
+    margin: 0;
+    font-size: 14px;
+    background-color: var(--color-alert-default-background);
+}
+
+.alert-primary {
+    background-color: var(--color-alert-primary-background);
+    border: none;
+}
+
+.alert-primary * {
+    color: var(--mdc-text-button-label-text-color, var(--mat-app-primary));
+}
+
+.alert-danger {
+    border: none;
+    background-color: var(--color-alert-danger-background);
+}
+
+.alert-danger * {
+    color: var(--color-font-danger);
+}
