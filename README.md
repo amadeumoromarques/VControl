@@ -95,3 +95,8 @@ Para configurar e rodar o projeto no seu computador, verifique se você possui a
      ```bash
      npm start
      ```
+
+## Como executar a aplicação?
+
+Se deseja verificar como deve ser instalado corretamente o sistema e efetuar o build da aplicação, pode seguir os passos abaixo:
+- Video mostrando como baixar o projeto e compilar ele na máquina - [Video explicando como efetuar o debug da aplicação](https://youtu.be/Ld9ims6J4VY).
