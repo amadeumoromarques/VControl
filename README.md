@@ -30,7 +30,7 @@ Clique na imagem abaixo para visualizar as funções basicas do software em func
 
 [Clique aqui para assitir o video de introdução ao sistema](https://youtu.be/B5Gc1P2i3Ug)
 
-[![Assista ao vídeo no YouTube](https://github.com/amadeumoromarques/VControl/blob/master/System%20Pictures/0_HomePage.png)](https://youtu.be/B5Gc1P2i3Ug)
+[![Assista ao vídeo no YouTube](https://github.com/amadeumoromarques/VControl/blob/master/System%20Pictures/application.gif)](https://youtu.be/B5Gc1P2i3Ug)
 
 ## Download do executável para abrir a aplicação
 Se você deseja executar a aplicação antes de efetuar o build no seu computador, é possível efetuar o download do executável para iniciar a API e o FRONT:
