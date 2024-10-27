@@ -30,12 +30,12 @@ Clique na imagem abaixo para visualizar as funções basicas do software em func
 
 [Clique aqui para assitir o video de introdução ao sistema](https://youtu.be/B5Gc1P2i3Ug)
 
-[![Assista ao vídeo no YouTube](https://github.com/amadeumoromarques/VolvoCrud/blob/master/System%20Pictures/0_HomePage.png)](https://youtu.be/B5Gc1P2i3Ug)
+[![Assista ao vídeo no YouTube](https://github.com/amadeumoromarques/VControl/blob/master/System%20Pictures/0_HomePage.png)](https://youtu.be/B5Gc1P2i3Ug)
 
 ## Download do executável para abrir a aplicação
 Se você deseja executar a aplicação antes de efetuar o build no seu computador, é possível efetuar o download do executável para iniciar a API e o FRONT:
 
-- Download do executável - Arquivo do Git: WebApi_All_PublishedVersion.zip - [Clique aqui para fazer download](https://github.com/amadeumoromarques/VolvoCrud/blob/master/WebApi_All_PublishedVersion.zip)
+- Download do executável - Arquivo do Git: WebApi_All_PublishedVersion.zip - [Clique aqui para fazer download](https://github.com/amadeumoromarques/VControl/blob/master/WebApi_All_PublishedVersion.zip)
 - Video de como baixar e abrir o executável do Windows - [Clique aqui para assitir o video](https://youtu.be/CXUrOcfxP0A)
 
 **OBS: É necessário extrair todos os arquivos do .zip para que funcione corretamente**
