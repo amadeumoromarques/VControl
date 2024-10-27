@@ -101,7 +101,7 @@ Para configurar e rodar o projeto no seu computador, verifique se você possui a
 ## Como efetuar o Build da aplicação?
 
 Se deseja verificar como deve ser instalado corretamente o sistema e efetuar o build da aplicação, pode seguir os passos abaixo:
-- Video mostrando como baixar o projeto e compilar ele na máquina - [Video explicando como efetuar o debug da aplicação](https://youtu.be/Ld9ims6J4VY).
+- Video mostrando como baixar o projeto e compilar ele na máquina - [Video explicando como efetuar o debug da aplicação](https://youtu.be/HryHCL3DK7s).
 - Documento técnico com instruções detalhadas do passo a passo de como efetuar o build da aplicação - [Link do Download do arquivo](https://github.com/amadeumoromarques/VolvoCrud/blob/master/Documents/Efetuar%20o%20Build%20da%20aplica%C3%A7%C3%A3o%20local.pdf)
 
 ## Como executar os testes unitários?
